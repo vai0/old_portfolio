@@ -13,14 +13,6 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        loader: 'style!css!sass'
-      },
-      {
-        test: /\.css$/,
-        loader: 'style!css'
-      },
-      {
         test: /\.woff2?$/,
         loader: 'url-loader',
         options: {
@@ -36,10 +28,8 @@ module.exports = {
           name: './css/fonts/[hash].[ext]',
         },
       },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?mimetype=image/svg+xml'
-      },
+      {test: /\.scss$/, loader: 'style!css!sass'},
+      {test: /\.css$/, loader: 'style!css'},
     ]
   }
 }

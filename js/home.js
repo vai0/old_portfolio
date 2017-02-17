@@ -1,21 +1,31 @@
 import React from 'react'
 import '../css/Home.scss'
-import '../node_modules/font-awesome/scss/font-awesome.scss'
 
 export default class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
         <Navbar />
-        <div className="main-container">
-          <Hero />
-          <About />
-          <h2 className="section-title">Projects</h2>
-          <Projects projects={this.props.projects}/>
-          <div className="background"></div>
-        </div>
+        <Hero />
+        <About statements={this.props.statements}/>
+        <h2 className="section-title">Projects</h2>
+        <Projects projects={this.props.projects}/>
+        <div className="background"></div>
+        <ContactLinks />
         <Footer />
       </div>
+    );
+  }
+}
+
+class Navbar extends React.Component {
+  render() {
+    return (
+      <nav className="navbar">
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">About</a>
+      </nav>
     );
   }
 }
@@ -26,31 +36,19 @@ class Hero extends React.Component {
       <div className="hero-container">
         <div className="hero-title">> Justin_Chi<span className="cursor">&nbsp;</span></div>
         <div className="hero-description">
-          I'm a software developer in the bay
-          area learning how to design and build beautiful, performant,
-          responsive websites.
+          I'm a developer in the bay
+          area on a journey learning to design and build beautiful sites.
+          See my progress through the projects I've built.
         </div>
       </div>
     );
   }
 }
 
-class Navbar extends React.Component {
+class ContactLinks extends React.Component {
   render() {
     return (
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Projects</a>
-        <a href="#">About</a>
-      </nav>
-    );
-  }
-}
-
-class Footer extends React.Component {
-  render() {
-    return (
-      <div>
+      <div className="contact-links">
         <span><a href="#">j.chi2241@gmail.com</a></span>||
         <span><a href="#">LinkedIn</a></span>||
         <span><a href="#">github</a></span>
@@ -59,36 +57,18 @@ class Footer extends React.Component {
   }
 }
 
+class Footer extends React.Component {
+  render () {
+    return (
+      <div className="footer">
+        <span>© 2017 created by Justin Chi</span>
+      </div>
+    );
+  }
+}
+
 class About extends React.Component {
   render() {
-
-    var statements = [
-      {
-        input: 'Justin.currentLocation',
-        return: '"San Jose, CA"'
-      },
-      {
-        input: 'Justin.contactInfo',
-        return: '["<a href="#">j.chi2241@gmail.com</a>", "<a href="#">LinkedIn</a>", "<a href="#">github</a>"]'
-      },
-      {
-        input: 'Justin.resume',
-        return: '"<a href="#">justinchi.pdf</a>"'
-      },
-      {
-        input: 'Justin.interests',
-        return: '["design", "webdev", "foosball", "/r/nba", "starcraft"]'
-      },
-      {
-        input: 'Justin.education',
-        return: '"University of California, San Diego"'
-      },
-      {
-        input: 'Justin.skills',
-        return: '["HTML5", "CSS3", "Javasript", "jQuery", "ReactJS", "git", "webpack", "Sketch"]'
-      }
-    ];
-
     return (
       <div className="about-container">
         <div className="terminal">
@@ -98,7 +78,7 @@ class About extends React.Component {
             <div className="header-button green"></div>
           </div>
           <div className="terminal-window">
-            <Statements statements={statements}/>
+            <Statements statements={this.props.statements}/>
           </div>
         </div>
       </div>
@@ -200,12 +180,10 @@ class ProjectLinks extends React.Component {
 
 class ProjectLink extends React.Component {
   render() {
-    if (this.props.site === 'github') {
-      return <span></span>
-    } else if (this.props.site === 'preview') {
-      return <span></span>
-    } else {
-
-    }
+    return (
+      <a href={this.props.link} className="project-link">
+        <span className={`icon--${this.props.site}`}></span>
+      </a>
+    );
   }
 }

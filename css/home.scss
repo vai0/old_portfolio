@@ -4,6 +4,7 @@ $lightGrey: #f0f0f0;
 $fadedPurple: #666385;
 $fadedBlue: #f6f9fc;
 $highlighterGreen: #5bdfa5;
+$linkTeal: #35feff;
 
 @font-face {
   font-family: 'Avenir-Medium';
@@ -19,49 +20,67 @@ $highlighterGreen: #5bdfa5;
        url('./fonts/Avenir-Light.ttf') format('truetype');
 }
 
-.main-container {
-  position: relative;
-  background-color: $fadedBlue;
-  z-index: -1000;
+body {
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
 
-  .background {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 600px;
-    background-color: white;
-    -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-  }
+.section-title {
+  color: black;
+  font-family: 'Avenir-Medium', Verdana, Geneva, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
 
-  .section-title {
+.section-title:after {
+  content: " ";
+  border:4px solid $purple;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 50px;
+}
+
+.navbar {
+  font-family: 'Avenir-Medium', Verdana, Geneva, sans-serif;
+  font-size: 1.2em;
+  text-align: right;
+  margin-top: 40px;
+  margin-right: 40px;
+
+  a {
+    position: relative;
+    text-decoration: none;
     color: black;
-    font-family: 'Avenir-Medium', Verdana, Geneva, sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 80px;
-  }
+    margin-left: 30px;
 
-  .section-title:after {
-    content: " ";
-    border:4px solid $purple;
-    display: block;
-    margin: 0 auto;
-    margin-top: 30px;
-    width: 50px;
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -30px;
+      width: 0;
+      height: 8px;
+      background-color: $purple;
+      content: "";
+      transition: width 0.2s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
   }
 }
 
 .hero-container {
-  width: 1000px;
+  width: 900px;
   margin: 0 auto;
-  margin-top: 260px;
+  margin-top: 30vh;
 
   .hero-title {
     font-family: monaco, Consolas, "Lucida Console", monospace;
-    font-size: 4em;
+    font-size: 3.5em;
     color: $purple;
 
     .cursor {
@@ -71,14 +90,15 @@ $highlighterGreen: #5bdfa5;
 
   .hero-description {
     font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
+    line-height: 40px;
     color: $grey;
-    margin: 50px 0;
+    margin: 80px 0;
   }
 }
 
 .about-container {
-  margin-top: 200px;
+  margin-top: 20vh;
 
   .terminal {
     width: 900px;
@@ -123,7 +143,7 @@ $highlighterGreen: #5bdfa5;
 
       a {
         text-decoration: none;
-        color: #35feff;
+        color: $linkTeal;
       }
 
       .statement:first-child {
@@ -209,6 +229,7 @@ $highlighterGreen: #5bdfa5;
 
 .projects-container {
   .project-card {
+    position: relative;
     width: 700px;
     margin: 0 auto;
     margin-bottom: 60px;
@@ -222,19 +243,40 @@ $highlighterGreen: #5bdfa5;
       margin-top: 0;
     }
 
-    p:before {
-      content: " ";
-      border:4px solid $lightGrey;
-      margin-top: 60px;
-      margin-bottom: 15px;
-      display: block;
-      max-width: 100px;
+    .project-link {
+      position: absolute;
+      text-decoration: none;
+      color: $grey;
+      font-size: 2em;
+
+      &:hover {
+        color: $purple;
+      }
+
+      &:first-child {
+        top: 100px;
+        right: 100px;
+      }
+
+      &:nth-child(2) {
+        top: 98px;
+        right: 155px;
+      }
     }
 
     p {
       font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
       margin-bottom: 40px;
       line-height: 27px;
+
+      &:before {
+        content: " ";
+        border:4px solid $lightGrey;
+        margin-top: 60px;
+        margin-bottom: 15px;
+        display: block;
+        max-width: 100px;
+      }
     }
 
     .project-skill {
@@ -247,4 +289,48 @@ $highlighterGreen: #5bdfa5;
       color: $grey;
     }
   }
+}
+
+.contact-links {
+  font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 150px;
+  padding-bottom: 200px;
+
+  span {
+    margin: 0 30px;
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -30px;
+      width: 0;
+      height: 8px;
+      background-color: $purple;
+      content: "";
+      transition: width 0.2s;
+    }
+
+    &:hover {
+      color: $purple;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+  text-align: center;
+  padding-bottom: 50px;
 }
