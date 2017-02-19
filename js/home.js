@@ -36,9 +36,9 @@ class Hero extends React.Component {
       <div className="hero-container">
         <div className="hero-title">> Justin_Chi<span className="cursor">&nbsp;</span></div>
         <div className="hero-description">
-          I'm a developer in the bay
-          area on a journey learning to design and build beautiful sites.
-          See my progress through the projects I've built.
+          I'm a software developer in the bay
+          area on a path to learning how to design and build beautiful websites.
+          Follow my progress through the projects I've built.
         </div>
       </div>
     );
@@ -49,8 +49,8 @@ class ContactLinks extends React.Component {
   render() {
     return (
       <div className="contact-links">
-        <span><a href="#">j.chi2241@gmail.com</a></span>||
-        <span><a href="#">LinkedIn</a></span>||
+        <span><a href="#">j.chi2241@gmail.com</a></span>
+        <span><a href="#">LinkedIn</a></span>
         <span><a href="#">github</a></span>
       </div>
     );
@@ -149,7 +149,7 @@ class ProjectCard extends React.Component {
 class ProjectSkills extends React.Component {
   render() {
     return (
-      <div>
+      <div className="project-skills">
         {this.props.skills.map((skill, index) => {
           return <ProjectSkill skill={skill} key={index} />;
         })}
