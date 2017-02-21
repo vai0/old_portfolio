@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var extractCSS = new ExtractTextPlugin('css/main.css');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -31,8 +33,10 @@ module.exports = {
           name: './css/fonts/[hash].[ext]',
         },
       },
-      {test: /\.scss$/, loader: 'style!css!sass'},
-      {test: /\.css$/, loader: 'style!css'},
+      {
+        test: /\.scss$/i,
+        loader: extractCSS.extract(['css','sass'])
+      }
     ]
   },
   plugins: [
@@ -41,6 +45,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    extractCSS
   ],
 }
