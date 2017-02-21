@@ -226,6 +226,7 @@ body {
         margin-bottom: 25px;
         margin-left: 35px;
         margin-right: 35px;
+        line-height: 24px;
 
         .input-statement {
           color: #f7f7f7;
@@ -236,7 +237,7 @@ body {
         }
 
         .return-statement {
-          color: #ffe385;
+          color: #e5cc77;
         }
 
         span {
@@ -301,7 +302,6 @@ body {
       font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
       margin-bottom: 40px;
       line-height: 27px;
-      text-align: justify;
 
       &:before {
         content: " ";

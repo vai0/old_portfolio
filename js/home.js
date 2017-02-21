@@ -8,7 +8,7 @@ export default class Home extends React.Component {
         <Navbar />
         <Hero />
         <About statements={this.props.statements}/>
-        <h2 className="section-title">Projects</h2>
+        <h2 id="projects" className="section-title">Projects</h2>
         <Projects projects={this.props.projects}/>
         <div className="background"></div>
         <ContactLinks />
@@ -23,7 +23,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <a href="#">Home</a>
-        <a href="#">Projects</a>
+        <a href="#projects">Projects</a>
         <a href="#">About</a>
       </nav>
     );
@@ -49,9 +49,9 @@ class ContactLinks extends React.Component {
   render() {
     return (
       <div className="contact-links">
-        <span><a href="#">j.chi2241@gmail.com</a></span>
-        <span><a href="#">LinkedIn</a></span>
-        <span><a href="#">github</a></span>
+        <span><a href="mailto:j.chi2241@gmail.com">j.chi2241@gmail.com</a></span>
+        <span><a href="https://www.linkedin.com/in/justin-chi-64b12b37">LinkedIn</a></span>
+        <span><a href="https://github.com/vai0">github</a></span>
       </div>
     );
   }
