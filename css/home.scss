@@ -121,12 +121,23 @@ body {
     font-size: 3.5em;
     color: $purple;
 
+    &:before {
+      content: '>\a0';
+    }
+
     @include mobile {
       font-size: 2.5em;
     }
 
-    .cursor {
+    span {
       background-color: rgba($purple, .65);
+      animation: caret 1s steps(1) infinite;
+    }
+
+    @keyframes caret {
+      50% {
+        background-color: transparent;
+      }
     }
   }
 
@@ -210,68 +221,27 @@ body {
         margin-bottom: 25px;
         margin-left: 35px;
         margin-right: 35px;
-        .input-statement:before {
-          content: '>\a0';
-        }
 
         .input-statement {
           color: #f7f7f7;
+
+          &:before {
+            content: '>\a0';
+          }
         }
 
         .return-statement {
           color: #ffe385;
         }
 
-        .cursor {
-          -webkit-animation: 1s blink step-end infinite;
-          -moz-animation: 1s blink step-end infinite;
-          -ms-animation: 1s blink step-end infinite;
-          -o-animation: 1s blink step-end infinite;
-          animation: 1s blink step-end infinite;
+        span {
+          background:rgba(247, 247, 247, 0.65);
+          animation: caret 1s steps(1) infinite;
         }
 
-        @keyframes "blink" {
-          from, to {
-            color: transparent;
-          }
+        @keyframes caret {
           50% {
-            background:rgba(247, 247, 247, 0.65);
-          }
-        }
-
-        @-moz-keyframes blink {
-          from, to {
-            color: transparent;
-          }
-          50% {
-            background:rgba(247, 247, 247, 0.65);
-          }
-        }
-
-        @-webkit-keyframes "blink" {
-          from, to {
-            color: transparent;
-          }
-          50% {
-            background:rgba(247, 247, 247, 0.65);
-          }
-        }
-
-        @-ms-keyframes "blink" {
-          from, to {
-            color: transparent;
-          }
-          50% {
-            background:rgba(247, 247, 247, 0.65);
-          }
-        }
-
-        @-o-keyframes "blink" {
-          from, to {
-            color: transparent;
-          }
-          50% {
-            background:rgba(247, 247, 247, 0.65);
+            background-color: transparent;
           }
         }
       }

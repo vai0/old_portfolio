@@ -34,7 +34,7 @@ class Hero extends React.Component {
   render() {
     return (
       <div className="hero-container">
-        <div className="hero-title">> Justin_Chi<span className="cursor">&nbsp;</span></div>
+        <div className="hero-title"></div>
         <div className="hero-description">
           I'm a software developer in the bay
           area on a path to learning how to design and build beautiful websites.
@@ -95,7 +95,7 @@ class Statements extends React.Component {
         })}
         <div className="statement">
           <div className="input-statement">
-            <span className="cursor">&nbsp;</span>
+            <span>&nbsp;</span>
           </div>
         </div>
       </div>
