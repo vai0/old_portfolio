@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Home from './Home.js'
 import './typewriter.js'
+import './smoothscroll.js'
 
 var projects = [
   {

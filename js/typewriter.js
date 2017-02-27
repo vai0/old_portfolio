@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(event){
-
   var str = "Justin_Chi";
   var text = '';
   var herotext = document.querySelector('.hero-title');
