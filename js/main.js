@@ -16,7 +16,7 @@ var projects = [
   },
   {
     title: "Tom's Metal Site",
-    description: "A revamp the website of the first company where I took my first job. This project was intended to deepen my understanding of media queries. You can see the original site here. The site supports mobile, tablet, and desktop sizes. All done with media queries, pure HTML5, and CSS3 - no external libraries or javasc",
+    description: "A revamp the website of the first company where I took my first job. This project was intended to deepen my understanding of media queries. You can see the original site here. The site supports mobile, tablet, and desktop sizes. All done with media queries, pure HTML5 and CSS3 - no external libraries or javascript.",
     skills: ['HTML5', 'CSS3'],
     links: {
       github: 'https://momofuku.com/',
@@ -48,7 +48,7 @@ var statements = [
   },
   {
     input: 'Justin.skills',
-    return: '["HTML5", "CSS3", "Javasript", "jQuery", "ReactJS", "git", "webpack", "Sketch"]'
+    return: '["HTML5", "CSS3", "Javascript", "jQuery", "ReactJS", "git", "Sketch"]'
   }
 ];
 

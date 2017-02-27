@@ -11,6 +11,7 @@ export default class Home extends React.Component {
         <h2 id="projects" className="section-title">Projects</h2>
         <Projects projects={this.props.projects}/>
         <div className="background"></div>
+        <h2 id="contact" className="section-title">Contact me!</h2>
         <ContactLinks />
         <Footer />
       </div>
@@ -22,9 +23,9 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar">
-        <a href="#">Home</a>
+        <a href="https://justinchi.me">Home</a>
         <a href="#projects">Projects</a>
-        <a href="#">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     );
   }
