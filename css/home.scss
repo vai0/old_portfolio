@@ -303,6 +303,17 @@ body {
       margin-bottom: 40px;
       line-height: 27px;
 
+      a {
+        text-decoration: none;
+        color: $purple;
+        position: relative;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $linkTeal;
+        }
+      }
+
       &:before {
         content: " ";
         border:4px solid $lightGrey;

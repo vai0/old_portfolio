@@ -8,11 +8,11 @@ import './smoothscroll.js'
 var projects = [
   {
     title: "Wakey Alarm Clock",
-    description: "This project is based off a mock-up by designer Jennifer Yuchi. This project was indended to deepen my understanding of ReactJS. Polymer components were used for material design. Eventual plans - replace Polymer with react-mdl, create a progressive web app so it integrates deeper as a mobile app with alarm notifications, congregate the data up into a higher component.",
+    description: 'This project is based off a mock-up by designer <a href="http://www.xiaotongyuchi.com/wakeyalarm">Jennifer Yuchi</a>. This project was intended to deepen my understanding of ReactJS. Polymer components were used for material design (strange I know). Eventual plan - create a progressive web app. Designed for mobile use.',
     skills: ['HTML5', 'CSS3', 'Javascript', 'ReactJS', 'Polymer'],
     links: {
-      github: 'https://momofuku.com/',
-      preview: 'https://stripe.com/'
+      github: 'https://github.com/vai0/alarmclock',
+      preview: 'https://justinchi.me/alarmclock/'
     }
   },
   {
@@ -20,8 +20,8 @@ var projects = [
     description: "A revamp the website of the first company where I took my first job. This project was intended to deepen my understanding of media queries. You can see the original site here. The site supports mobile, tablet, and desktop sizes. All done with media queries, pure HTML5 and CSS3 - no external libraries or javascript.",
     skills: ['HTML5', 'CSS3'],
     links: {
-      github: 'https://momofuku.com/',
-      preview: 'https://google.com'
+      github: 'https://github.com/vai0/tomsmetal_site',
+      preview: 'https://justinchi.me/tomsmetal/'
     }
   }
 ];

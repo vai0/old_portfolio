@@ -140,7 +140,7 @@ class ProjectCard extends React.Component {
       <div className="project-card">
         <h3>{this.props.projectTitle}</h3>
         <ProjectLinks links={this.props.projectLinks}/>
-        <p>{this.props.projectDescription}</p>
+        <p dangerouslySetInnerHTML={{__html: this.props.projectDescription}}></p>
         <ProjectSkills skills={this.props.projectSkills}/>
       </div>
     );
