@@ -35,17 +35,18 @@ module.exports = {
       },
       {
         test: /\.scss$/i,
-        loader: extractCSS.extract(['css','sass'])
+        loaders: ['style', 'css', 'sass']
       }
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
-    extractCSS
+    // loader: extractCSS.extract(['css','sass'])
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     'NODE_ENV': JSON.stringify('production')
+    //   }
+    // }),
+    // new webpack.optimize.UglifyJsPlugin(),
+    // extractCSS
   ],
 }

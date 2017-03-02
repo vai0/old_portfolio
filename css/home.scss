@@ -47,8 +47,35 @@ $desktop-width: 1024px;
 }
 
 body {
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-color: #F6F9FC;
 }
+
+#topBackground {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 760px;
+  transform: skewY(-12deg);
+  transform-origin: 0;
+  background-color: white;
+  z-index: -1;
+
+  @include mobile {
+    height: 500px;
+  }
+}
+
+// svg {
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   height: 60vw;
+//   z-index: -1;
+//
+//   @include mobile {
+//     height: 700px;
+//   }
+// }
 
 .home-container {
   max-width: 1112px;
@@ -123,8 +150,19 @@ body {
 
   .hero-title {
     font-family: 'Monaco', Consolas, "Lucida Console", monospace;
-    font-size: 3.5em;
+    font-size: 4.5em;
     color: $purple;
+    // background: rgba(60,44,201,1);
+    // background: -moz-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
+    // background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(60,44,201,1)), color-stop(100%, rgba(193,186,247,1)));
+    // background: -webkit-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
+    // background: -o-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
+    // background: -ms-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
+    // background: linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c2cc9', endColorstr='#c1baf7', GradientType=1 );
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+
 
     &:before {
       content: '>\a0';
