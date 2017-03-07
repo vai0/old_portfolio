@@ -46,7 +46,7 @@ var statements = [
   },
   {
     input: 'Justin.resume',
-    return: '"<a href="#">justinchi.pdf</a>"'
+    return: '"<a href="./justinchi_resume.pdf" target="_blank">justinchi.pdf</a>"'
   },
   {
     input: 'Justin.interests',

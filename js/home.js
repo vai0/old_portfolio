@@ -37,8 +37,8 @@ class Hero extends React.Component {
       <div className="hero-container">
         <div className="hero-title"></div>
         <div className="hero-description">
-          I'm a software developer in the bay
-          area on a path to learning how to design and build beautiful websites.
+          I'm a Front-end developer in the bay
+          area on a path to learning how to build beautiful websites.
           Follow my progress through the projects I've built.
         </div>
       </div>
