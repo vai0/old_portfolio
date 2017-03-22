@@ -9,11 +9,20 @@ import './analytics.js'
 var projects = [
   {
     title: "Wakey Alarm Clock",
-    description: 'This project is based off a mock-up by designer <a href="http://www.xiaotongyuchi.com/wakeyalarm">Jennifer Yuchi</a>. This project was intended to deepen my understanding of ReactJS. Polymer components were used for material design (strange I know). Eventual plan - create a progressive web app. Designed for mobile use.',
+    description: 'This project is based off a mock-up by designer <a href="http://www.xiaotongyuchi.com/wakeyalarm">Xiaotong Yuchi</a>. This project was intended to deepen my understanding of ReactJS. Polymer components were used for material design (strange I know). Eventual plan - create a progressive web app. Designed for mobile use.',
     skills: ['HTML5', 'CSS3', 'Javascript', 'ReactJS', 'Polymer', 'Material Design'],
     links: {
       github: 'https://github.com/vai0/alarmclock',
       preview: 'https://justinchi.me/alarmclock/'
+    }
+  },
+  {
+    title: "Wakey Weather Backgrounds",
+    description: 'Backgrounds for when the alarm is triggered in the Wakey Alarm Clock app. CSS animations and a bit of Javascript for the snow and rain. No external libraries.',
+    skills: ['HTML5', 'CSS3', 'Javascript'],
+    links: {
+      github: 'https://github.com/vai0/weather-animations',
+      preview: 'https://justinchi.me/alarmclockweather'
     }
   },
   {

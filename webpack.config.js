@@ -37,7 +37,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // loader: extractCSS.extract(['css','sass'])
+    // loader: extractCSS.extract(['css','sass']),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
