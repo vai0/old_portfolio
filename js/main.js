@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import Home from './Home.js'
 import './typewriter.js'
 import './smoothscroll.js'
+import './analytics.js'
 
 var projects = [
   {

@@ -28,10 +28,7 @@ module.exports = {
       },
       {
         test: /\.(ttf|svg|eot)$/,
-        loader: 'file-loader',
-        options: {
-          name: './css/fonts/[hash].[ext]',
-        },
+        loader: 'url-loader',
       },
       {
         test: /\.scss$/i,
