@@ -1,5 +1,6 @@
 import React from 'react'
-import '../css/Home.scss'
+import smoothScroll from 'smoothscroll-polyfill'
+import 'css/Home.scss'
 
 export default class Home extends React.Component {
   render() {
@@ -20,9 +21,28 @@ export default class Home extends React.Component {
 }
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    const self = this;
+    smoothScroll.polyfill();
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+      self.refs.navbar.addEventListener('click', function(e) {
+        if (e.target.innerText === 'Projects') {
+          document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+        } else if (e.target.innerText === 'Contact') {
+          document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
   render() {
     return (
-      <nav className="navbar">
+      <nav className="navbar" ref="navbar">
         <a href="https://justinchi.me">Home</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -32,10 +52,37 @@ class Navbar extends React.Component {
 }
 
 class Hero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.typewrite = this.typewrite.bind(this);
+  }
+
+  typewrite(str) {
+    var text = '';
+    var typespeed = 0;
+    var mintypespeed = 90;
+    var maxtypespeed = 150;
+    var self = this;
+
+    for (var i = 0; i <= str.length; i++) {
+      (function(x) {
+        typespeed += Math.random() * (maxtypespeed - mintypespeed) + mintypespeed;
+        setTimeout(function() {
+          self.refs.heroTitle.innerHTML = text + '<span>&nbsp;</span>';
+          text += str[x];
+        }, typespeed);
+      }(i));
+    }
+  }
+
+  componentDidMount() {
+    this.typewrite('Justin_Chi');
+  }
+
   render() {
     return (
       <div className="hero-container">
-        <div className="hero-title"></div>
+        <div className="hero-title" ref="heroTitle"></div>
         <div className="hero-description">
           I'm a front-end developer in the bay
           area on a path to learning how to build beautiful websites.
