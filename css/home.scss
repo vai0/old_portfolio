@@ -1,12 +1,12 @@
 @import './fonts/camphor';
 @import '_reset';
 
-$purple: #675bc1;
+$purple: #877cde;
 $grey: #525f7f;
 $lightGrey: #f0f0f0;
 $fadedPurple: #666385;
 $fadedBlue: #7795f8;
-$highlighterGreen: #a6e4c9;
+$highlighterGreen: #92eac0;
 $linkTeal: #35feff;
 
 $tablet-width: 768px;
@@ -121,7 +121,7 @@ body {
       height: 8px;
       background-color: $purple;
       content: "";
-      transition: width 0.2s;
+      transition: width 0.15s;
     }
 
     &:hover {
@@ -147,16 +147,7 @@ body {
     font-family: 'Monaco', Consolas, "Lucida Console", monospace;
     font-size: 4.5em;
     color: $purple;
-    // background: rgba(60,44,201,1);
-    // background: -moz-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
-    // background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(60,44,201,1)), color-stop(100%, rgba(193,186,247,1)));
-    // background: -webkit-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
-    // background: -o-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
-    // background: -ms-linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
-    // background: linear-gradient(45deg, rgba(60,44,201,1) 0%, rgba(193,186,247,1) 100%);
-    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c2cc9', endColorstr='#c1baf7', GradientType=1 );
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
+    transition: all .5s ease;
 
 
     &:before {
@@ -186,6 +177,7 @@ body {
     line-height: 40px;
     color: $grey;
     margin: 80px 0;
+    transition: all .5s ease;
 
     @include mobile {
       font-size: 1.2em;
@@ -300,15 +292,17 @@ body {
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+    transition: all .5s ease;
 
     @include mobile {
-      padding: 60px;
+      padding: 45px;
     }
 
     h3 {
       font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
       font-weight: 500;
       font-size: 1.8em;
+      line-height: 38px;
       color: $grey;
       margin-top: 0;
       margin-bottom: 35px;
@@ -319,8 +313,12 @@ body {
       justify-content: flex-end;
       margin-top: 20px;
 
+      @include mobile {
+        justify-content: flex-start;
+      }
+
       .project-link {
-        margin: 10px 10px 0 10px;
+        margin: 10px 20px 0 0;
         white-space: nowrap;
         display: inline-block;
         height: 40px;
@@ -335,7 +333,7 @@ body {
         color: #fff;
         background: $purple;
         font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
-        font-size: 0.9375em;
+        font-size: 0.9em;
         font-weight: 600;
 
         &:hover {
@@ -447,7 +445,7 @@ body {
       height: 8px;
       background-color: $purple;
       content: "";
-      transition: width 0.2s;
+      transition: width 0.15s;
 
       @include mobile {
         bottom: -15px;
