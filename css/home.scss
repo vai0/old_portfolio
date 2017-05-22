@@ -4,7 +4,7 @@ $purple: #675bc1;
 $grey: #525f7f;
 $lightGrey: #f0f0f0;
 $fadedPurple: #666385;
-$fadedBlue: #f6f9fc;
+$fadedBlue: #7795f8;
 $highlighterGreen: #a6e4c9;
 $linkTeal: #35feff;
 
@@ -28,18 +28,6 @@ $desktop-width: 1024px;
     @content;
   }
 }
-
-// @font-face {
-//   font-family: 'Avenir-Medium';
-//   src: url('./fonts/Avenir-Medium.woff2') format('woff2'),
-//        url('./fonts/Avenir-Medium.woff') format('woff'),
-// }
-//
-// @font-face {
-//   font-family: 'Avenir-Light';
-//   src: url('./fonts/Avenir-Light.woff2') format('woff2'),
-//        url('./fonts/Avenir-Light.woff') format('woff'),
-// }
 
 @font-face {
   font-family: 'Monaco';
@@ -136,7 +124,7 @@ body {
     }
 
     &:hover {
-      color: black;
+      color: $fadedBlue;
 
       &:after {
         width: 100%;
@@ -339,17 +327,18 @@ body {
         padding: 0 14px;
         box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
         border-radius: 4px;
-        font-size: 0.8em;
-        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: .05em;
+        letter-spacing: .025em;
         text-decoration: none;
         transition: all .15s ease;
         color: #fff;
         background: $purple;
+        font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
+        font-size: 0.9375em;
+        font-weight: 600;
 
         &:hover {
-          background: #7795f8;
+          background: $fadedBlue;
           transform: translateY(-1px);
           box-shadow: 0 7px 14px rgba(50,50,93,.1),
                       0 3px 6px rgba(0,0,0,.08);
@@ -407,7 +396,7 @@ body {
 
 .contact-links {
   font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: center;
   margin-top: 150px;
   padding-bottom: 200px;
@@ -427,6 +416,7 @@ body {
 
     &:after {
       content: "||";
+      color: $grey;
       margin: 0 30px;
 
       @include mobile {
@@ -464,7 +454,7 @@ body {
     }
 
     &:hover {
-      color: black;
+      color: $fadedBlue;
 
       &:after {
         width: 100%;
