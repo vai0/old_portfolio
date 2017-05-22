@@ -37,7 +37,7 @@ class Hero extends React.Component {
       <div className="hero-container">
         <div className="hero-title"></div>
         <div className="hero-description">
-          I'm a Front-end developer in the bay
+          I'm a front-end developer in the bay
           area on a path to learning how to build beautiful websites.
           Follow my progress through the projects I've built.
         </div>
@@ -139,9 +139,9 @@ class ProjectCard extends React.Component {
     return (
       <div className="project-card">
         <h3>{this.props.projectTitle}</h3>
-        <ProjectLinks links={this.props.projectLinks}/>
         <p dangerouslySetInnerHTML={{__html: this.props.projectDescription}}></p>
         <ProjectSkills skills={this.props.projectSkills}/>
+        <ProjectLinks links={this.props.projectLinks}/>
       </div>
     );
   }
@@ -181,10 +181,9 @@ class ProjectLinks extends React.Component {
 
 class ProjectLink extends React.Component {
   render() {
+    const buttonText = (this.props.site === 'github') ? 'github' : 'view project';
     return (
-      <a href={this.props.link} className="project-link">
-        <span className={`icon--${this.props.site}`}></span>
-      </a>
+      <a href={this.props.link} className="project-link">{buttonText}</a>
     );
   }
 }

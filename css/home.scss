@@ -1,11 +1,11 @@
 @import 'camphor';
 
-$purple: #614fec;
-$grey: #8d8d8d;
+$purple: #675bc1;
+$grey: #525f7f;
 $lightGrey: #f0f0f0;
 $fadedPurple: #666385;
 $fadedBlue: #f6f9fc;
-$highlighterGreen: #5bdfa5;
+$highlighterGreen: #a6e4c9;
 $linkTeal: #35feff;
 
 $tablet-width: 768px;
@@ -29,27 +29,29 @@ $desktop-width: 1024px;
   }
 }
 
-@font-face {
-  font-family: 'Avenir-Medium';
-  src: url('./fonts/Avenir-Medium.woff2') format('woff2'),
-       url('./fonts/Avenir-Medium.woff') format('woff'),
-       url('./fonts/Avenir-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Avenir-Light';
-  src: url('./fonts/Avenir-Light.woff2') format('woff2'),
-       url('./fonts/Avenir-Light.woff') format('woff'),
-       url('./fonts/Avenir-Light.ttf') format('truetype');
-}
+// @font-face {
+//   font-family: 'Avenir-Medium';
+//   src: url('./fonts/Avenir-Medium.woff2') format('woff2'),
+//        url('./fonts/Avenir-Medium.woff') format('woff'),
+// }
+//
+// @font-face {
+//   font-family: 'Avenir-Light';
+//   src: url('./fonts/Avenir-Light.woff2') format('woff2'),
+//        url('./fonts/Avenir-Light.woff') format('woff'),
+// }
 
 @font-face {
   font-family: 'Monaco';
-  src: url('./fonts/Monaco-Linux.ttf') format('truetype'),
+  src: url('./fonts/monaco-webfont.woff') format('woff'),
 }
 
 body {
   background-color: #F6F9FC;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "pnum";
+  font-variant-numeric: proportional-nums;
 }
 
 #topBackground {
@@ -85,11 +87,13 @@ body {
 }
 
 .section-title {
-  color: black;
-  font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+  color: $grey;
+  font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
+  font-weight: 500;
   font-size: 1.5em;
   text-align: center;
-  margin-top: 100px;
+  padding-top: 50px;
+  margin-top: 50px;
   margin-bottom: 80px;
 }
 
@@ -103,7 +107,7 @@ body {
 }
 
 .navbar {
-  font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+  font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
   font-size: 1.2em;
   text-align: right;
   margin-top: 40px;
@@ -187,7 +191,8 @@ body {
   }
 
   .hero-description {
-    font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+    font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
+    font-weight: 200;
     font-size: 1.5em;
     line-height: 40px;
     color: $grey;
@@ -210,8 +215,7 @@ body {
     .terminal-header {
       height: 28px;
       background-color: #e4e3e5;
-      border-top-left-radius: 10px 10px;
-      border-top-right-radius: 10px 10px;
+      border-radius: 10px 10px 0 0;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -241,6 +245,7 @@ body {
 
     .terminal-window {
       background-color: $fadedPurple;
+      border-radius: 0 0 4px 4px;
       box-shadow: 0 50px 100px rgba(50,50,93,.15), 0 15px 35px rgba(50,50,93,.2), 0 5px 15px rgba(0,0,0,.12);
       font-family: 'Monaco', Consolas, "Lucida Console", monospace;
 
@@ -302,8 +307,9 @@ body {
   .project-card {
     position: relative;
     margin-bottom: 60px;
-    padding: 90px;
+    padding: 75px;
     background-color: white;
+    border-radius: 4px;
     box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
 
     @include mobile {
@@ -311,37 +317,51 @@ body {
     }
 
     h3 {
-      font-family: 'Monaco', Consolas, "Lucida Console", monospace;
+      font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
+      font-weight: 500;
       font-size: 1.8em;
+      color: $grey;
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 35px;
     }
 
     .project-links {
       display: flex;
       justify-content: flex-end;
+      margin-top: 20px;
 
       .project-link {
-        position: relative;
+        margin: 10px 10px 0 10px;
+        white-space: nowrap;
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 14px;
+        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+        border-radius: 4px;
+        font-size: 0.8em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .05em;
         text-decoration: none;
-        color: $fadedPurple;
-        font-size: 1.8em;
-        margin-left: 5px;
+        transition: all .15s ease;
+        color: #fff;
+        background: $purple;
 
         &:hover {
-          color: $purple;
-        }
-
-        &:nth-child(2) {
-          top: 2px;
+          background: #7795f8;
+          transform: translateY(-1px);
+          box-shadow: 0 7px 14px rgba(50,50,93,.1),
+                      0 3px 6px rgba(0,0,0,.08);
         }
       }
     }
 
     p {
-      font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
-      margin-bottom: 40px;
+      font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
+      margin-bottom: 30px;
       line-height: 27px;
+      color: $grey;
 
       a {
         text-decoration: none;
@@ -354,29 +374,30 @@ body {
         }
       }
 
-      &:before {
-        content: " ";
-        border:4px solid $lightGrey;
-        margin-bottom: 15px;
-        display: block;
-        max-width: 100px;
-
-        @include mobile {
-          max-width: 60px;
-        }
-      }
+      // &:before {
+      //   content: " ";
+      //   border:4px solid $lightGrey;
+      //   margin-top: 10px;
+      //   margin-bottom: 15px;
+      //   display: block;
+      //   max-width: 100px;
+      //
+      //   @include mobile {
+      //     max-width: 60px;
+      //   }
+      // }
     }
     .project-skills {
       display: flex;
       flex-wrap: wrap;
 
       .project-skill {
-      	border-radius: 100px;
-      	border: solid 2px $highlighterGreen;
-        padding: 8px 20px;
-        margin-right: 15px;
-        margin-bottom: 13px;
-        font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+        border-radius: 4px;
+        border: solid 2px $highlighterGreen;
+        padding: 8px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
         font-size: 0.85em;
         color: $grey;
       }
@@ -385,7 +406,7 @@ body {
 }
 
 .contact-links {
-  font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+  font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
   font-size: 1.5em;
   text-align: center;
   margin-top: 150px;
@@ -453,8 +474,8 @@ body {
 }
 
 .footer {
-  font-family: 'Avenir-Light', Verdana, Geneva, sans-serif;
+  font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;
   text-align: center;
   padding-bottom: 50px;
-  color: $fadedPurple;
+  color: $grey;
 }
