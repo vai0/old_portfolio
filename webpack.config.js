@@ -1,49 +1,62 @@
-const webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var extractCSS = new ExtractTextPlugin('css/main.css');
+var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
   entry: './js/main.js',
   output: {
+    path: path.join(__dirname, 'build'), // This is where images AND js will go
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-0']
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'es2015']
+          }
         }
       },
       {
-        test: /\.woff2?$/,
-        loader: 'url-loader',
-        options: {
-          name: './css/fonts/[hash].[ext]',
-          limit: 50000,
-          mimetype: 'application/font-woff',
-        },
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "sass-loader",
+        }]
       },
       {
-        test: /\.(ttf|svg|eot)$/,
-        loader: 'url-loader',
+        test: /\.(woff2|woff)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: './css/fonts/[name].[ext]',
+            limit: 50000,
+            mimetype: 'application/font-woff',
+          },
+        }
       },
       {
-        test: /\.scss$/i,
-        loaders: ['style', 'css', 'sass']
+        test: /\.(svg|png|jpg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: './images/[name].[ext]',
+            limit: '8192'
+          }
+        }
       }
     ]
   },
-  plugins: [
-    // loader: extractCSS.extract(['css','sass']),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin()
-    // extractCSS
-  ],
-}
+  resolve: {
+    modules: [
+      path.resolve('./js'),
+      path.resolve('./'),
+      'node_modules'
+    ]
+  },
+};
