@@ -6,7 +6,8 @@ const projects = [
     links: {
       github: 'https://github.com/vai0/stockmarketchart',
       preview: 'https://justinchi.me/stockmarketchart/'
-    }
+    },
+    screenshot: 'stockmarketchart.png'
   },
   {
     title: "Wakey Alarm Clock",
@@ -15,7 +16,8 @@ const projects = [
     links: {
       github: 'https://github.com/vai0/alarmclock',
       preview: 'https://justinchi.me/alarmclock/'
-    }
+    },
+    screenshot: 'wakeyalarmclock.png'
   },
   {
     title: "Wakey Weather Backgrounds",
@@ -24,7 +26,8 @@ const projects = [
     links: {
       github: 'https://github.com/vai0/weather-animations',
       preview: 'https://justinchi.me/alarmclockweather'
-    }
+    },
+    screenshot: 'stockmarketchart.png'
   },
   {
     title: "Tom's Metal Site",
@@ -33,7 +36,8 @@ const projects = [
     links: {
       github: 'https://github.com/vai0/tomsmetal_site',
       preview: 'https://justinchi.me/tomsmetal/'
-    }
+    },
+    screenshot: 'stockmarketchart.png'
   },
   {
     title: 'Portfolio Site',
@@ -42,7 +46,8 @@ const projects = [
     links: {
       github: 'https://github.com/vai0/portfolio_3',
       preview: 'https://justinchi.me/'
-    }
+    },
+    screenshot: 'stockmarketchart.png'
   }
 ];
 

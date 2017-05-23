@@ -55,6 +55,9 @@ class Hero extends React.Component {
   constructor(props) {
     super(props);
     this.typewrite = this.typewrite.bind(this);
+    this.state = {
+      heroText: ''
+    }
   }
 
   typewrite(str) {
@@ -68,7 +71,9 @@ class Hero extends React.Component {
       (function(x) {
         typespeed += Math.random() * (maxtypespeed - mintypespeed) + mintypespeed;
         setTimeout(function() {
-          self.refs.heroTitle.innerHTML = text + '<span>&nbsp;</span>';
+          self.setState({
+            heroText: text + '<span>&nbsp;</span>'
+          });
           text += str[x];
         }, typespeed);
       }(i));
@@ -82,7 +87,7 @@ class Hero extends React.Component {
   render() {
     return (
       <div className="hero-container">
-        <div className="hero-title" ref="heroTitle"></div>
+        <div className="hero-title" ref="heroTitle" dangerouslySetInnerHTML={{__html: this.state.heroText}}></div>
         <div className="hero-description">
           I'm a front-end developer in the bay
           area on a path to learning how to build beautiful websites.
@@ -173,6 +178,7 @@ class Projects extends React.Component {
               projectDescription={project.description}
               projectSkills={project.skills}
               projectLinks={project.links}
+              projectScreenshot={project.screenshot}
               key={index} />
           )
         })}
@@ -182,13 +188,20 @@ class Projects extends React.Component {
 }
 
 class ProjectCard extends React.Component {
+  componentDidMount() {
+    this.refs.screenshot.style.background= "url('../images/" + this.props.projectScreenshot + "')";
+  }
   render() {
     return (
       <div className="project-card">
-        <h3>{this.props.projectTitle}</h3>
-        <p dangerouslySetInnerHTML={{__html: this.props.projectDescription}}></p>
-        <ProjectSkills skills={this.props.projectSkills}/>
-        <ProjectLinks links={this.props.projectLinks}/>
+        <div className="project-screenshot" ref="screenshot"></div>
+        <div className="project-background"></div>
+        <div className="project-content">
+          <h3>{this.props.projectTitle}</h3>
+          <p dangerouslySetInnerHTML={{__html: this.props.projectDescription}}></p>
+          <ProjectSkills skills={this.props.projectSkills}/>
+          <ProjectLinks links={this.props.projectLinks}/>
+        </div>
       </div>
     );
   }

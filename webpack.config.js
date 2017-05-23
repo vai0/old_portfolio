@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  entry: './js/main.js',
+  entry: './js/index.js',
   output: {
     path: path.join(__dirname, 'build'), // This is where images AND js will go
     filename: 'bundle.js'
@@ -35,7 +35,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             name: './css/fonts/[name].[ext]',
-            limit: 50000,
+            limit: 40000,
             mimetype: 'application/font-woff',
           },
         }
@@ -46,7 +46,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             name: './images/[name].[ext]',
-            limit: '8192'
+            limit: 40000
           }
         }
       }
