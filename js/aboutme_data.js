@@ -21,7 +21,7 @@ const statements = [
   },
   {
     input: 'Justin.skills',
-    return: '["HTML5", "CSS3", "JavaScript", "ReactJS", "webpack", "git", "Sketch"]'
+    return: '["HTML5", "CSS3", "Sass", "JavaScript", "ReactJS", "webpack", "git", "Sketch"]'
   }
 ];
 

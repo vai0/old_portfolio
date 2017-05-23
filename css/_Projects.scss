@@ -6,41 +6,40 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-bottom: 60px;
-    padding: 75px;
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
     transition: all .5s ease;
     overflow: hidden;
 
-    @include mobile {
-      padding: 45px;
-    }
-
     .project-screenshot {
-      position: absolute;
-      top: -50px;
-      left: -10px;
-      height: 130%;
-      width: 130%;
-      background-size: cover;
+      width: 60%;
+
+      @include mobile {
+      }
     }
 
     .project-background {
       position: absolute;
-      top: -3%;
-      right: -3%;
-      height: 105%;
-      width: 80%;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 75%;
       background: url('../images/project-background-white.svg');
       background-size: cover;
     }
 
     .project-content {
-      width: 50%;
+      padding: 75px;
+      width: 45%;
       z-index: 2;
+      transition: all .5s ease;
+
+      @include mobile {
+        padding: 45px;
+      }
 
       h3 {
         font-family: 'Camphor', Open Sans, Segoe UI, sans-serif;

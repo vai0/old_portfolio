@@ -89,9 +89,9 @@ class Hero extends React.Component {
       <div className="hero-container">
         <div className="hero-title" ref="heroTitle" dangerouslySetInnerHTML={{__html: this.state.heroText}}></div>
         <div className="hero-description">
-          I'm a front-end developer in the bay
-          area on a path to learning how to build beautiful websites.
-          Follow my progress through the projects I've built.
+          I'm a product manager in the bay
+          area self-learning to become a front-end engineer.
+          Follow my progress through the projects below.
         </div>
       </div>
     );
@@ -189,7 +189,9 @@ class Projects extends React.Component {
 
 class ProjectCard extends React.Component {
   componentDidMount() {
-    this.refs.screenshot.style.background= "url('../images/" + this.props.projectScreenshot + "')";
+    this.refs.screenshot.style.background = "url('../images/" + this.props.projectScreenshot + "')";
+    this.refs.screenshot.style.backgroundSize = 'cover';
+    this.refs.screenshot.style.backgroundRepeat = 'no-repeat'
   }
   render() {
     return (
