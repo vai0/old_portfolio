@@ -1,6 +1,6 @@
 import React from 'react'
 import smoothScroll from 'smoothscroll-polyfill'
-import 'css/Home.scss'
+import 'css/index.scss'
 
 export default class Home extends React.Component {
   render() {
@@ -189,7 +189,7 @@ class Projects extends React.Component {
 
 class ProjectCard extends React.Component {
   componentDidMount() {
-    this.refs.screenshot.style.background = "url('../images/" + this.props.projectScreenshot + "')";
+    this.refs.screenshot.style.background = "url('./images/" + this.props.projectScreenshot + "')";
     this.refs.screenshot.style.backgroundSize = 'cover';
     this.refs.screenshot.style.backgroundRepeat = 'no-repeat'
   }

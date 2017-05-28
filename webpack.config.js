@@ -1,11 +1,19 @@
 var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const VENDOR_LIBS = [
+  'react', 'react-dom', 'smoothscroll-polyfill'
+]
 
 module.exports = {
-  entry: './js/index.js',
+  entry: {
+    bundle: './src/js/index.js',
+    vendor: VENDOR_LIBS
+  },
   output: {
-    path: path.join(__dirname, 'build'), // This is where images AND js will go
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -34,8 +42,8 @@ module.exports = {
         use: {
           loader: 'url-loader',
           options: {
-            name: './css/fonts/[name].[ext]',
-            limit: 40000,
+            name: './fonts/[name].[ext]',
+            limit: 30000,
             mimetype: 'application/font-woff',
           },
         }
@@ -46,7 +54,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             name: './images/[name].[ext]',
-            limit: 40000
+            limit: 30000
           }
         }
       }
@@ -54,9 +62,17 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.resolve('./js'),
-      path.resolve('./'),
+      path.resolve('./src/js'),
+      path.resolve('./src'),
       'node_modules'
     ]
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ]
 };
