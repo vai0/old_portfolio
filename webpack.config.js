@@ -13,13 +13,13 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -69,7 +69,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      names: ['vendor', 'manifest']
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html'

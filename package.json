@@ -4,8 +4,10 @@
   "description": "my personal portfolio site",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf ./dist/*",
     "dev": "webpack-dev-server --progress",
-    "build": "webpack -p --progress"
+    "build": "npm run clean && webpack -p --progress",
+    "upload": "scp -r ./dist/* justin@justinchi.me:/var/www/html"
   },
   "author": "Justin Chi",
   "license": "ISC",

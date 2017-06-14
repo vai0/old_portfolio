@@ -3,7 +3,7 @@
 const projects = [
   {
     title: "Chart the Stock Market",
-    description: 'This project is based off this <a href="https://www.freecodecamp.com/challenges/chart-the-stock-market">challenge</a>. Data is retrieved from the <a href="https://developer.tradier.com/documentation">Tradier API</a>. Search autocomplete relies on the lookup endpoint and runs slow at times. Please be patient!',
+    description: 'This project is based off this <a href="https://www.freecodecamp.com/challenges/chart-the-stock-market">challenge</a>. Wrangled with styling HighCharts and learned the use of Promises. Data is from the <a href="https://developer.tradier.com/documentation">Tradier API</a>. Search autocomplete relies on the lookup endpoint and sometimes runs slow. Please be patient!',
     skills: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ES6', 'ReactJS'],
     screenshot: 'stockmarketchart.png',
     links: {
@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: "Wakey Alarm Clock",
-    description: 'This project is based off this <a href="http://www.xiaotongyuchi.com/wakeyalarm">mock-up</a> by designer Xiaotong Yuchi. Polymer components were taken directly from Google spec to ensure smooth animations on mobile. Designed for mobile use.',
+    description: 'My first major app built with ReactJS and it was a tremendous learning experience. This project was created for a good friend - check out her <a href="http://www.xiaotongyuchi.com/wakeyalarm">mock-up</a>! Polymer components were taken directly from Google spec to ensure smooth animations on mobile (this was before Material Components existed).',
     skills: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ReactJS', 'Polymer', 'Material Design'],
     screenshot: 'wakeyalarmclock.png',
     links: {
@@ -32,8 +32,18 @@ const projects = [
     }
   },
   {
-    title: 'Portfolio Site',
-    description: 'This website! The site is designed for both mobile and desktop.',
+    title: "Google Calculator",
+    description: 'Applied techniques learned from <a href="https://watchandcode.com/p/practical-javascript">Practical Javascript</a> - writing requirements, iterating, and structuring app as an MVC. This really helped me build a much better foundation in JavaScript for web development. Aside from the Material Components library for the ripples, no frameworks were used. Design is based off the original <a href="https://play.google.com/store/apps/details?id=com.google.android.calculator&hl=en">Google Calculator on Android</a>.',
+    skills: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ES6', 'Material Components'],
+    screenshot: 'calculator.png',
+    links: {
+      github: 'https://github.com/vai0/material_calculator',
+      preview: 'https://justinchi.me/calculator'
+    }
+  },
+  {
+    title: 'Portfolio',
+    description: 'This page! Responsive website built with ReactJS. The site content is passed in as JSON data, auto-generating components for easy maintenance.',
     skills: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ReactJS'],
     screenshot: 'portfolio.png',
     links: {

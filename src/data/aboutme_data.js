@@ -13,11 +13,11 @@ const statements = [
   },
   {
     input: 'Justin.interests',
-    return: '["design", "webdev", "foosball", "/r/nba", "starcraft"]'
+    return: '["design", "basketball", "cooking", "starcraft"]'
   },
   {
     input: 'Justin.education',
-    return: '"University of California, San Diego"'
+    return: '"B.Sc. Structural Engineering - University of California, San Diego"'
   },
   {
     input: 'Justin.skills',

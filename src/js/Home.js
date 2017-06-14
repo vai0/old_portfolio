@@ -89,9 +89,10 @@ class Hero extends React.Component {
       <div className="hero-container">
         <div className="hero-title" ref="heroTitle" dangerouslySetInnerHTML={{__html: this.state.heroText}}></div>
         <div className="hero-description">
-          I'm a product manager in the bay
-          area self-learning to become a front-end engineer.
-          Follow my progress through the projects below.
+          I am a Front-End Engineer in the Bay Area. The goal for all my projects
+          is to produce simple, beautiful user experiences. In my prior life, I worked
+          as a Product Manager at iSmartAlarm.
+          Follow my progress by exploring my recent projects below.
         </div>
       </div>
     );
@@ -114,7 +115,7 @@ class Footer extends React.Component {
   render () {
     return (
       <div className="footer">
-        <span>© 2017 created by Justin Chi</span>
+        <span>Designed and developed by Justin Chi © 2017</span>
       </div>
     );
   }
@@ -243,7 +244,7 @@ class ProjectLinks extends React.Component {
 
 class ProjectLink extends React.Component {
   render() {
-    const buttonText = (this.props.site === 'github') ? 'github' : 'view project';
+    const buttonText = (this.props.site === 'github') ? 'view code' : 'explore demo';
     return (
       <a href={this.props.link} className="project-link">{buttonText}</a>
     );
