@@ -10,7 +10,7 @@
   @include mobile {
     flex-direction: column;
     margin-top: 80px;
-    padding-bottom: 130px;
+    padding-bottom: 80px;
   }
 
   span {
@@ -32,6 +32,7 @@
     &:nth-child(3) {
       &:after {
         content: "";
+        margin: 0;
       }
     }
   }

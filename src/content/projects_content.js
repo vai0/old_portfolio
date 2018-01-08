@@ -2,6 +2,16 @@
 
 const projects = [
   {
+    title: "Travlr",
+    description: 'Travel smarter by saving the places you want to go. This project was an assignment given for an interview. The requirements were to build a web-app that calls the Google Places API. It must include a map with pins and a list of locations, with some interactivity between the two.',
+    skills: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ES6', 'ReactJS', 'Redux'],
+    screenshot: 'travlr.png',
+    links: {
+      github: 'https://github.com/vai0/travlr',
+      preview: 'https://justinchi.me/travlr/'
+    }
+  },
+  {
     title: "Chart the Stock Market",
     description: 'This project is based off this <a href="https://www.freecodecamp.com/challenges/chart-the-stock-market">challenge</a>. Wrangled with styling HighCharts and learned the use of Promises. Data is from the <a href="https://developer.tradier.com/documentation">Tradier API</a>. Search autocomplete relies on the lookup endpoint and sometimes runs slow. Please be patient!',
     skills: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ES6', 'ReactJS'],

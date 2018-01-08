@@ -1,6 +1,8 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const VENDOR_LIBS = [
   'react', 'react-dom', 'smoothscroll-polyfill'
@@ -49,12 +51,12 @@ module.exports = {
         }
       },
       {
-        test: /\.(svg|png|jpg)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: {
           loader: 'url-loader',
           options: {
-            name: './images/[name].[ext]',
-            limit: 30000
+            name: './images/[name]-[hash].[ext]',
+            limit: 10000
           }
         }
       }
@@ -62,8 +64,11 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.resolve('./src/js'),
       path.resolve('./src'),
+      path.resolve('./src/js'),
+      path.resolve('./src/js/components'),
+      path.resolve('./src/scss'),
+      path.resolve('./src/content'),
       'node_modules'
     ]
   },
@@ -73,6 +78,17 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
+    }),
+    new CopyWebpackPlugin([{
+      from: './src/images',
+      to: 'images'
+    }]),
+    new ImageminPlugin({
+      disable: process.env.NODE_ENV !== 'production',
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      pngquant: {
+        speed: 1
+      }
     })
   ]
 };

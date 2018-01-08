@@ -1,17 +1,22 @@
 @import './fonts/camphor';
-@import '_reset';
-@import '_colors';
-@import '_mediaQueries';
-@import '_Navbar';
-@import '_Hero';
-@import '_About';
-@import '_Projects';
-@import '_Contact';
-@import '_Footer';
+@import 'reset';
+@import 'colors';
+@import 'breakpoints';
+
+@import '../js/components/Navbar';
+@import '../js/components/Hero';
+@import '../js/components/About';
+@import '../js/components/Projects';
+@import '../js/components/Contact';
+@import '../js/components/Footer';
 
 @font-face {
   font-family: 'Monaco';
   src: url('./fonts/monaco-webfont.woff') format('woff'),
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,6 +56,10 @@ body {
   padding-top: 50px;
   margin-top: 50px;
   margin-bottom: 80px;
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
 }
 
 .section-title:after {

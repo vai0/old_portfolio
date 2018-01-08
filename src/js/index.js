@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Home from 'Home.js'
-import 'analytics.js'
-import projects from 'data/projects_data'
-import statements from 'data/aboutme_data'
+import 'vendor/analytics.js'
+import projects from 'content/projects_content'
+import statements from 'content/aboutme_content'
 
 ReactDOM.render(
   <Home projects={projects} statements={statements}/>,
