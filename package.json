@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./dist/*",
-    "start": "webpack-dev-server --progress --colors --devtool eval-source-map",
+    "develop": "webpack-dev-server --progress --colors --devtool eval-source-map",
     "build": "npm run clean && NODE_ENV='production' webpack -p --progress --colors --devtool nosources-source-map"
   },
   "repository": {
